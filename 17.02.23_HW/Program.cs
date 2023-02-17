@@ -94,9 +94,11 @@ namespace _17._02._23_HW
             arr_func += FibNum;
             foreach (ArrNum item in arr_func.GetInvocationList())
                 Console.WriteLine(item(buf) + "\n");
-            Console.WriteLine(CurTime());
-            Console.WriteLine(CurDate());
-            Console.WriteLine(CurDay());
+            CurTimeFunc time = new CurTimeFunc(CurDate);
+            time += CurDay;
+            time += CurTime;
+            foreach (CurTimeFunc item in time.GetInvocationList())
+                Console.WriteLine(item() + "\n");
         }
     }
 }
